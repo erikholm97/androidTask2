@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#173F5F</color>
+    <color name="colorPrimaryDark">#173F5F</color>
+    <color name="colorAccent">#173F5F</color>
+    <color name="colorOne">#173F5F</color>
+    <color name="colorTwo">#20639B</color>
+    <color name="colorThree">#3CAEA3</color>
+    <color name="colorFour">#F6D55C</color>
+    <color name="colorFive">#ED553B</color>
+    <!--https://refactoring-ui.nyc3.cdn.digitaloceanspaces.com/previews/whats-in-a-color-palette-01.png color palette. -->
+</resources>
