@@ -8,8 +8,9 @@ import android.hardware.SensorManager;
 
 
 public class Accelerometer {
-
-    public interface Listener{
+    // Ref: Richvale Consulting https://www.youtube.com/watch?v=OPsVr44uCb8.
+    //Ref:  https://developer.android.com/guide/topics/sensors/sensors_overview.html
+    public interface Listener{ // Listener for accelerometer.
         void onTranslation(float tx, float ty, float tz);
     }
     private Listener listener;
@@ -34,7 +35,7 @@ public class Accelerometer {
             @Override
             public void onSensorChanged(SensorEvent event) {
 
-                if(listener != null){
+                if(listener != null){ // Listener for the accelerometer.
                     listener.onTranslation(event.values[0], event.values[1], event.values[2]);
                 }
             }
@@ -47,7 +48,7 @@ public class Accelerometer {
 
 
     }
-    public void register(){
+    public void register(){ // Registers the accelerometer and the sensormanger is set to delay normal 20,000 ms.
         androidSensorManager.registerListener(sensorEventListener, androidSensor, androidSensorManager.SENSOR_DELAY_NORMAL);
     }
     public void unregister(){
