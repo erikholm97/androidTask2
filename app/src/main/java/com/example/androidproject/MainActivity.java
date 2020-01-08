@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 //Ref: Richvale Consulting https://www.youtube.com/watch?v=nnfHZgqx4F4, https://developer.android.com/guide/topics/sensors/sensors_overview
 
     private Accelerometer accelerometer; // Used to store the accelerometer value to use it in the set listener.
-    private Gyroscope gyroscope; // Used to store the gyroscope value to use it in the set listener.
+
     private Button button; // Used for the button that navigates to the second page.
     private ImageView moveObject;
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         accelerometer = new Accelerometer(this);
-        gyroscope = new Gyroscope(this);
+
 
         button = (Button) findViewById(R.id.howTobutton); // Fetching the button on xml page.
 
@@ -50,24 +50,15 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(tx < -1.0f){
                     getWindow().getDecorView().setBackgroundColor(Color.rgb(60, 174, 163)); // Turns the background color into #3caea3
-                  }
-
-            }
-        });
-        gyroscope.setLister(new Gyroscope.Listener() {
-            @Override
-            public void onRotation(float rx, float ry, float rz) {
-                if(rx > 1.0f){
-                    getWindow().getDecorView().setBackgroundColor(Color.rgb(246, 213, 92)); // Same functions as above only that the color changes when using the gyroscope.
                 }
-                else if(rx < -1.0f){
-                    getWindow().getDecorView().setBackgroundColor(Color.rgb(246, 213, 92));
-
+                else{
+                    getWindow().getDecorView().setBackgroundColor(Color.rgb( 	238	,238	,238)); // Get back to normal color
                 }
 
 
             }
         });
+
     }
     public void openActivity2(){ //Function to take user to Main2Activity class.
         Intent intent = new Intent(this, Main2Activity.class); // Requests the main2activity using an intent functionality wich calls the android component.
@@ -75,18 +66,18 @@ public class MainActivity extends AppCompatActivity {
     // Ref https://hv.instructure.com/courses/2278/files/133982?module_item_id=50943
     }
     @Override
-    protected void onResume(){ //When app restarts the accelerometer, gyroscope registers
+    protected void onResume(){ //When app restarts the accelerometer registers
         super.onResume();
 
         accelerometer.register();
-        gyroscope.register();
+
     }
     @Override
-    protected void onPause(){ // Unregisters accelerometer, gyroscope when the app is paused. (Ui is partially visable for the user)
+    protected void onPause(){ // Unregisters accelerometer when the app is paused. (Ui is partially visable for the user)
         super.onPause();
 
         accelerometer.unregister();
-        gyroscope.unregister();
+
     }
 
 }

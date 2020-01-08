@@ -35,7 +35,7 @@
         android:width="40dp"
         android:background="@drawable/elementsdrawable"
         android:padding="10dp"
-        android:text="How to play"
+        android:text="Gyroscope"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
